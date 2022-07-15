@@ -1,0 +1,40 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title %} Employee Management System {% endblock %}
+{% block css %}
+{% endblock %}
+{% block body %}
+<div >
+<Div><img style="background-size: cover; background-position: center; background-attachment: fixed; margin-bottom: -380px; height: 550px; width: 100%;"  src="{% static 'adminlogin.jpg' %}" alt="My image"></div>
+<br>
+<h1 class="text-center text-white"><u>Admin Login</u></h1><br>
+<p class=" text-white"><b>Note:</b> Only the admin can login from here.</p>
+    <form method="POST"> {% csrf_token %}
+
+    <div class="row">
+        <div class="span2 well col-lg-5">
+            <label><i style="font-weight: bold; color: white">Username</i></label>
+            <input type="text" class="form-control " name="username" placeholder="Enter Username" required>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="span2 well col-lg-5">
+            <label><i style="font-weight: bold; color: white">Password</i></label>
+            <input type="password" class="form-control mt-2" name="password" placeholder="Enter Password" required>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary bg-success">Login</button><br>
+        <a href="/change_password">change password</a><br>
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Invalid Username or Password.")
+    document.location = "/admin_login"
+    {% endif %}
+</script>
+{% endblock %}

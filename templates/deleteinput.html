@@ -1,0 +1,21 @@
+
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="color: black">
+<Div><img style="background-size: cover; background-position: center; background-attachment: fixed; margin-bottom: -380px; height: 550px; width: 100%;"  src="{% static 'delete.jpg' %}" alt="My image"></div>
+<center>
+    <h1 style="color: red">Delete Employee Here</h1>
+<form action="./delete/" method="get" style="color: white">
+  Enter Employee ID:  <input type="text" name="t1"><br>
+    <input style="background-color: red; color: white" type="submit" value="delete">
+</form></center>
+
+</body>
+</html>
+{% endblock %}

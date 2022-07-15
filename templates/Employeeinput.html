@@ -1,0 +1,30 @@
+{% extends 'admin_navbar.html' %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#00ffff">
+<Div><img style="background-size: cover; background-position: center; background-attachment: fixed; margin-bottom: -380px; height: 550px; width: 100%;"  src="{% static 'addpic.jpg' %}" alt="My image"></div>
+<center><h1 style="color: orangered">Add Employees Here</h1></center>
+<form action="./insert/" method="get">
+    {% csrf_token %}
+    <center>
+    <table style="color: white">
+       <tr><td>Enter EmployeeId:</td><td><input type="text" name="t1" ></td></tr>
+        <tr><td>Enter EmployeeName:</td><td><input type="text" name="t2" ></td></tr>
+       <tr><td>Enter Designation:</td><td><input type="text" name="t3" ></td></tr>
+       <tr><td>Enter JoinedDate:</td><td><input type="text" name="t4" ></td></tr>
+       <tr><td>Enter Address:</td><td><input type="text" name="t5" ></td></tr>
+        <tr><td>Enter Phone:</td><td><input type="text" name="t6" ></td></tr>
+        <tr><td>Enter Email:</td><td><input type="text" name="t7" ></td></tr>
+        <tr><td>Enter Salary:</td><td><input type="text" name="t8" ></td></tr>
+        <tr><td>Enter WorkingDays:</td><td><input type="text" name="t9" ></td></tr>
+        <tr><td colspan="2" align="center"><input style="background-color: green; color: white" type="submit" value="Add" ></td></tr>
+    </table>
+        </center>
+</form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body bgcolor="#add8e6">
+<center><h1>Employee Details</h1></center>
+<!--<Div><img style="background-size: cover; background-position: center; background-attachment: fixed; margin-bottom: -380px; height: 550px; width: 100%;"  src="{% static 'display2.jpg' %}" alt="My image"></div>-->
+<form class="form-inline my-2 my-lg-0 " align="center" style="background-position: right">
+    <input class="form-control mr-sm-2 " style="background-color: snow" name="q" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0 " style="background-color: lightgreen" type="submit">Search</button>
+</form>
+
+<table border="1"  align="center" bgcolor="#fffaf0" style="border: solid">
+    <tr style="background-color: darkgray"><th>EmployeeId</th><th>EmployeeName</th><th>Designation</th><th>JoinedDate</th><th>Address</th><th>Phone</th><th>Email</th><th>Salary</th><th>WorkingDays</th></tr>
+    {% for rec in records %}
+    <tr><td>{{ rec.EmployeeId}}</td><td>{{ rec.EmployeeName}}</td><td>{{ rec.Designation}}</td><td>{{ rec.JoinedDate}}</td><td>{{ rec.Address}}</td><td>{{ rec.Phone}}</td><td>{{ rec.Email}}</td><td>{{ rec.Salary}}</td><td>{{ rec.WorkingDays}}</td></tr>
+    {%  endfor %}
+</table>
+</body>
+</html>
+{% endblock %}
