@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,13 +9,13 @@
 
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-
+    <link rel="stylesheet" href="{% static 'admin.css' %}"/>
     <title>{% block title %} {% endblock %}</title>
     {% block css %}
     {% endblock %}
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-black">
+    <nav class="navbar navbar-expand-lg navbar-light bg-black" >
         <div class="container-fluid">
           <a class="navbar-brand text-danger fw-bold" href="#">Employee Management System</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
